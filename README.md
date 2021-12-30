@@ -1,3 +1,8 @@
+## Requirements
+
+* Python3
+* `pip install google-currency`
+
 ## Usage example
 
 `python3.5 parse_book.py nfGlsiDGbxkC`
