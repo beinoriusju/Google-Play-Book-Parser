@@ -16,6 +16,7 @@ def createSoup(url):
         return None
         
     the_page = response.read()
+
     soup = BeautifulSoup( the_page, 'lxml' )   
     
     return soup
@@ -23,7 +24,7 @@ def createSoup(url):
 def getData(soup):
     json_data = soup.find( 'script', { 'type': 'application/ld+json' } )
 
-    return json.loads(json_data.get_text())
+    return json.loads(json_data.contents[0])
 
 def getBookTitle(data):
     return data['name']
